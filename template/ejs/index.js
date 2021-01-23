@@ -1,11 +1,16 @@
 // Import packages
 const express = require('express');
+const path = require('path');
+const morgan = require('morgan');
 
 // Import routes
-const routes = require('./routes/routes');
+const routes = require('./routes/web');
 
 // Initiate the app
 const app = express();
+
+// Using morgan to log
+app.use(morgan('dev'));
 
 // Set Port
 const PORT = process.env.PORT || 3000;
@@ -13,8 +18,11 @@ const PORT = process.env.PORT || 3000;
 // Set view engine
 app.set('view engine', 'ejs');
 
+// Set static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Mount routes
 app.use('/', routes);
 
 // Start app
-app.listen(PORT);
+app.listen(PORT, console.log("Application Started At PORT " + PORT));
