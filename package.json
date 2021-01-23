@@ -17,7 +17,9 @@
     "type": "git",
     "url": "git+https://github.com/Zubs/xstarter.git"
   },
-  "keywords": [],
+  "keywords": [
+    "web",
+  ],
   "author": "Zubs <zubairidrisaweda@gmail.com>",
   "license": "ISC",
   "bugs": {
