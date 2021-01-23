@@ -1,0 +1,30 @@
+{
+  "name": "@zubs/xstarter",
+  "version": "1.0.0",
+  "description": "NodeJs MVC starter",
+  "main": "src/index.js",
+  "bin": {
+    "@zubs/xstarter": "bin/xstarter",
+    "xstarter": "bin/xstarter"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zubs/xstarter.git"
+  },
+  "keywords": [],
+  "author": "Zubs <zubairidrisaweda@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zubs/xstarter/issues"
+  },
+  "homepage": "https://github.com/Zubs/xstarter#readme",
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
+}
