@@ -55,6 +55,48 @@ async function createProject (options)
         console.error( `${ chalk.red.bold( "ERROR" ) }  Invalid template name` );
         process.exit( 1 );
     }
+
+    const tasks = new Listr(
+        [
+            {
+                title: 'Copy template files',
+                task: () => copyTemplateFiles(config),
+            },
+            {
+                title: 'Initialize git',
+                task: () => initGit(config),
+                enabled: () => config.git,
+            },
+            {
+                title: 'Update package.json',
+                task: () => editPackageJSON(config),
+                enabled: () => config.template !== "basic",
+            },
+            {
+                title: 'Install dependencies',
+                task: () =>
+                {
+                    return projectInstall( {
+                        cwd: config.targetDirectory,
+                        prefer: config.manager,
+                    } );
+                },
+                skip: () =>
+                {
+                    if (!config.install)
+                    {
+                        return "No dependencies will be installed";
+                    }
+                }
+            },
+        ]
+    );
+
+    await tasks.run();
+
+    console.log( `${ chalk.green.bold("DONE") }. Project ready`);
+
+    return true;
 }
 
 export default createProject;

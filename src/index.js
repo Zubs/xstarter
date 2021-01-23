@@ -1,7 +1,8 @@
 import askQuestions from "./questions";
+import createProject from "./main";
 
 export async function cli ()
 {
     const options = await askQuestions();
-    console.log(options);
+    await createProject(options);
 }
