@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/Zubs/xstarter#readme",
   "dependencies": {
-    "esm": "^3.2.25"
+    "chalk": "^4.1.0",
+    "esm": "^3.2.25",
+    "inquirer": "^7.3.3"
   }
 }
