@@ -54,4 +54,9 @@ const checkPath = (path) =>
 };
 
 // Make function global
-export { checkPath };
+export { 
+	checkPath,
+	mapToTemplates,
+    initGit,
+    editPackageJSON
+};
