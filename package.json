@@ -27,6 +27,10 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "esm": "^3.2.25",
-    "inquirer": "^7.3.3"
+    "execa": "^5.0.0",
+    "inquirer": "^7.3.3",
+    "listr": "^0.14.3",
+    "ncp": "^2.0.0",
+    "pkg-install": "^1.0.0"
   }
 }
