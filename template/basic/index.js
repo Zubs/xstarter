@@ -23,4 +23,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 
 // Start app
-app.listen(PORT, console.log("Application Started At PORT " + PORT + "\nApplication can be found at " + terminalLink('http://localhost:' + PORT, 'http://localhost:' + PORT)));
+app.listen(PORT, console.log("Application Started At PORT " + PORT + "\nApplication can be found at " + terminalLink(chalk.yellow.bold('http://localhost:' + PORT), 'http://localhost:' + PORT)));

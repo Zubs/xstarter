@@ -12,10 +12,10 @@ import {
     editPackageJSON,
     checkPath
 } from "./utils";
-const access = promisify( fs.access );
-const copy = promisify( ncp );
+const access = promisify(fs.access);
+const copy = promisify(ncp);
 
-async function copyTemplateFiles ( options ) 
+async function copyTemplateFiles (options) 
 {
     return copy(options.templateDirectory, options.targetDirectory, {
     	clobber: false
@@ -28,9 +28,11 @@ async function createProject (options)
         name: options["project-name"],
         template: options["template"],
         manager: options["package-manager"],
+        authType: options["authType"],
         git: options.git,
         pkg: options.pkg,
         install: options.install,
+        auth: options.auth
     };
 
     let templateDirectory;
@@ -50,10 +52,10 @@ async function createProject (options)
 
     // Check if we can access the templates folder
     try {
-        await access( templateDirectory, fs.constants.R_OK );
+        await access(templateDirectory, fs.constants.R_OK);
     } catch ( error ) {
-        console.error( `${ chalk.red.bold( "ERROR" ) }  Invalid template name` );
-        process.exit( 1 );
+        console.error(`${ chalk.red.bold( "ERROR" ) }  Invalid template name`);
+        process.exit(1);
     }
 
     const tasks = new Listr(

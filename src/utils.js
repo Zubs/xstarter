@@ -5,7 +5,11 @@ import execa from 'execa';
 // Map templates choices to folders
 const mapToTemplates = {
 	"Node-Express-Mongo-JS": "ejs",
-    "HTML,CSS,JS": "basic"
+    "HTML,CSS,JS": "basic",
+    "basic-jwt": "basic-jwt",
+    "basic-session": "basic-session",
+    "ejs-jwt": "ejs-jwt",
+    "ejs-session": "ejs-session"
 };
 
 // Init git
@@ -43,13 +47,13 @@ async function editPackageJSON (options)
     });
 }
 
-// Define function
+// Check if folder exists in current directory
 const checkPath = (path) =>
 {
     try {
-    	return fs.existsSync( path );
-    } catch ( err ) {
-    	console.error( err );
+    	return fs.existsSync(path);
+    } catch (err) {
+    	console.error(err);
     }
 };
 
