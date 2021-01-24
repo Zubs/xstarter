@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "terminal-link": "^2.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

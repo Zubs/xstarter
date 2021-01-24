@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const terminalLink = require('terminal-link');
 
 // Import routes
 const routes = require('./routes/web');
@@ -22,4 +23,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 
 // Start app
-app.listen(PORT, console.log("Application Started At PORT " + PORT));
+app.listen(PORT, console.log("Application Started At PORT " + PORT + "\nApplication can be found at " + terminalLink('http://localhost:' + PORT, 'http://localhost:' + PORT)));

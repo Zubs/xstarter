@@ -1,5 +1,6 @@
 // Get packages
 import chalk from "chalk";
+import boxen from "boxen";
 import inquirer from "inquirer";
 import path from "path";
 import { platform } from "os";
@@ -9,7 +10,20 @@ import { checkPath } from "./utils";
 async function askQuestions ()
 {
     // Just a helpful message
-    // console.log( chalk.hex( "#e7c99a" )( "Use the up and down arrow keys to navigate multi-choice questions" ) );
+    const greeting = chalk.blue.bold("XStarter");
+
+    // Display settings for boxen
+    const boxenOptions = {
+        padding: 3,
+        margin: 1,
+        borderStyle: "round",
+        borderColor: "green",
+        backgroundColor: "#123456"
+    };
+
+    // Finally display welcome message
+    const msgBox = boxen(greeting, boxenOptions);
+    console.log(msgBox);
 
     // Initial set of questions
     const questionsSetA =

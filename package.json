@@ -1,6 +1,6 @@
 {
   "name": "@zubs/xstarter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "NodeJs MVC starter",
   "main": "src/index.js",
   "bin": {
@@ -39,7 +39,6 @@
     "inquirer": "^7.3.3",
     "listr": "^0.14.3",
     "ncp": "^2.0.0",
-    "pkg-install": "^1.0.0",
-    "terminal-link": "^2.1.1"
+    "pkg-install": "^1.0.0"
   }
 }
