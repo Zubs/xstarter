@@ -1,6 +1,6 @@
 {
   "name": "@zubs/xstarter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NodeJs MVC starter",
   "main": "src/index.js",
   "bin": {
@@ -19,6 +19,11 @@
   },
   "keywords": [
     "web",
+    "starter",
+    "node-starter",
+    "starterkit",
+    "backend",
+    "MVC"
   ],
   "author": "Zubs <zubairidrisaweda@gmail.com>",
   "license": "ISC",
