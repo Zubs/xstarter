@@ -9,7 +9,7 @@ import { checkPath } from "./utils";
 async function askQuestions ()
 {
     // Just a helpful message
-    console.log( chalk.hex( "#e7c99a" )( "Use the up and down arrow keys to navigate multi-choice questions" ) );
+    // console.log( chalk.hex( "#e7c99a" )( "Use the up and down arrow keys to navigate multi-choice questions" ) );
 
     // Initial set of questions
     const questionsSetA =
