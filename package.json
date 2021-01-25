@@ -1,6 +1,6 @@
 {
   "name": "@zubs/xstarter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "NodeJs MVC starter",
   "main": "src/index.js",
   "bin": {
