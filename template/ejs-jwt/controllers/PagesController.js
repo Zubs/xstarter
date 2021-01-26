@@ -4,7 +4,7 @@ const Home = (req, res) => {
 };
 
 const Dashboard = (req, res) => {
-	res.render('home');
+	res.render('home', { title: "Home" });
 }
 
 // Make function global

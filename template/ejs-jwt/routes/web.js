@@ -21,6 +21,9 @@ router.get('/register', AuthController.Register);
 // Respond to /forgot-password
 router.get('/forgot-password', AuthController.ForgotPassword);
 
+// Respond to /logout
+router.get('/logout', AuthController.Logout);
+
 // Handle post to /login
 router.post('/login', AuthController.PostLogin);
 
