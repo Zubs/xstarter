@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^4.1.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "mongoose": "^5.9.27",
     "morgan": "^1.10.0",
     "terminal-link": "^2.1.1"
   },
