@@ -11,6 +11,9 @@ const routes = require('./routes/web');
 // Initiate the app
 const app = express();
 
+// To accept json
+app.use(express.json());
+
 // Using morgan to log
 app.use(morgan('dev'));
 

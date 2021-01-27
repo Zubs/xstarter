@@ -9,7 +9,9 @@ const Login = (req, res) => {
 
 // Process Login
 const PostLogin = (req, res) => {
-	// Code will come here
+	
+	// Get user details
+	const { email, password } = red.body;
 };
 
 // Display Register Page
@@ -19,7 +21,9 @@ const Register = (req, res) => {
 
 // Process Register
 const PostRegister = (req, res) => {
-	// Code will come here
+	
+	// Get user details
+	const { name, email, password, cPassword } = req.body;
 };
 
 // Display Forgot Password Page
