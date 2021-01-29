@@ -5,6 +5,40 @@
 // Import Model
 const User = require('../models/User');
 
+// Error Handler
+const handleError = (errors) => {
+
+	// Define object to be returned
+	let error = {
+		email: "",
+		password: "",
+		name: ""
+	};
+
+	// Duplicate Email
+	if (errors.code === 11000) {
+
+		// Set email message
+		error.email = "Email Is Taken Already";
+
+		// Exit function
+		return error;
+	}
+
+	// Be sure we're handling user validation errors
+	if (errors.message.includes('user validation failed')) {
+
+		// Loop over errors
+		Object.values(errors.errors).forEach(({ properties }) => {
+
+			// Set error to appropriate field
+			error[properties.path] = properties.message;
+		})
+	} else {};
+
+	return error;
+};
+
 // Display Login Page
 const Login = (req, res) => {
 	res.render('login', { title: "Login" });
@@ -45,11 +79,11 @@ const PostRegister = async (req, res) => {
 
 		// Send response
 		res.status(201).json(user);
-	} catch(e) {
+	} catch(error) {
 
-		// Log error
-		console.log(e);
-		res.status(400).send("Error, Unable To Create User At This Time");
+		// Handle error
+		const errors = handleError(error);
+		res.status(400).json({ errors });
 	}
 };
 

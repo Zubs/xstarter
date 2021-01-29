@@ -1,5 +1,6 @@
 // Import packages
 const mongoose = require('mongoose');
+const { isEmail } = require('validator');
 
 // Create Schema
 const userSchema = new mongoose.Schema({
@@ -10,14 +11,14 @@ const userSchema = new mongoose.Schema({
 	email: {
 		type: String,
 		required: [true, "Please Provide Email"],
-		unique: [true, "Email Is Taken Already"],
-		validate: [() => {}, "Please Provide Valid Email"]
+		unique: true,
+		validate: [isEmail, "Please Provide Valid Email"]
 	},
 	password: {
 		type: String,
 		required: [true, "Please Provide Password"],
-		minLength: [8, "Password Can Be At Least 8 Characters"],
-		maxLength: [21, "Password Can Be Less Than 22 Characters"]
+		minlength: [8, "Password Can Be At Least 8 Characters"],
+		maxlength: [21, "Password Can Be Less Than 22 Characters"]
 	}
 });
 
