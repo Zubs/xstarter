@@ -41,7 +41,7 @@ const handleError = (errors) => {
 
 // Display Login Page
 const Login = (req, res) => {
-	res.render('login', { title: "Login" });
+	res.render('auth/login', { title: "Login" });
 };
 
 // Process Login
@@ -53,7 +53,7 @@ const PostLogin = async (req, res) => {
 	// Try log user in
 	try {
 		
-		const user = await; //
+		// const user = await; //
 	} catch(e) {
 		// statements
 		console.log(e);
@@ -62,7 +62,7 @@ const PostLogin = async (req, res) => {
 
 // Display Register Page
 const Register = (req, res) => {
-	res.render('register', { title: "Register" });
+	res.render('auth/register', { title: "Register" });
 };
 
 // Process Register
@@ -89,7 +89,7 @@ const PostRegister = async (req, res) => {
 
 // Display Forgot Password Page
 const ForgotPassword = (req, res) => {
-	res.render('forgot-password', { title: "Forgot Password" });
+	res.render('auth/forgot-password', { title: "Forgot Password" });
 };
 
 // Process ForgotPassword
@@ -102,6 +102,7 @@ const PostForgotPassword = (req, res) => {
 // Process Logout
 const Logout = (req, res) => {
 	// Code will go here
+	res.send('Testing');
 };
 
 // Make functions global
