@@ -22,6 +22,15 @@ const userSchema = new mongoose.Schema({
 	}
 });
 
+// Hash passwords before storing them
+userSchema.pre('save', function (next) {
+
+	// Hash password
+	
+	// Proceed to save
+	next();
+});
+
 // Make model from schema
 const User = mongoose.model('user', userSchema);
 
