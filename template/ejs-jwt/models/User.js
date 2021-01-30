@@ -1,6 +1,7 @@
 // Import packages
 const mongoose = require('mongoose');
 const { isEmail } = require('validator');
+const bcrypt = require('bcrypt');
 
 // Create Schema
 const userSchema = new mongoose.Schema({
@@ -23,9 +24,13 @@ const userSchema = new mongoose.Schema({
 });
 
 // Hash passwords before storing them
-userSchema.pre('save', function (next) {
+userSchema.pre('save', async function (next) {
 
-	// Hash password
+	// Generate salt
+	const salt = bcrypt.genSalt();
+
+	// Hash and update password
+	this.password = bcrypt.hash(this.password, salt);
 	
 	// Proceed to save
 	next();
