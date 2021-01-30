@@ -8,13 +8,17 @@
                         <div class="card-header">Register</div>
         
                         <div class="card-body">
-                            <form method="POST" action="/register">
+                            <form>
 
                                 <div class="form-group row">
                                     <label for="name" class="col-md-4 col-form-label text-md-right">Full Name</label>
         
                                     <div class="col-md-6">
                                         <input type="text" class="form-control" name="name" required autofocus>
+
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>Name Error</strong>
+                                        </span>
                                     </div>
                                 </div>
         
@@ -23,6 +27,10 @@
         
                                     <div class="col-md-6">
                                         <input type="email" class="form-control" name="email" required>
+
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>Mail Error</strong>
+                                        </span>
                                     </div>
                                 </div>
         
@@ -31,6 +39,10 @@
         
                                     <div class="col-md-6">
                                         <input type="password" class="form-control" name="password" required>
+
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>Password Error</strong>
+                                        </span>
                                     </div>
                                 </div>
 
@@ -39,12 +51,16 @@
         
                                     <div class="col-md-6">
                                         <input type="password" class="form-control" name="cPassword" required>
+
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>Password is not the same</strong>
+                                        </span>
                                     </div>
                                 </div>
         
                                 <div class="form-group row mb-0">
                                     <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
+                                        <button class="btn btn-primary">
                                             Register
                                         </button>
         
@@ -61,4 +77,27 @@
         </div>
     </div>
 </main>
+
+<!-- Submitting Form Script -->
+<script>
+
+    // Get form
+    const form = document.querySelector('form');
+
+    // Add event listener to form
+    form.addEventListener('submit', (event) => {
+
+        // Prevent Form's Default Action
+        event.preventDefault();
+
+        // Get inputs
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const cPassword = form.cPassword.value;
+
+        // Log to test
+        console.log(name, email, password, cPassword);
+    });
+</script>
 <%- include('../includes/footer'); -%>

@@ -69,7 +69,7 @@ const Register = (req, res) => {
 const PostRegister = async (req, res) => {
 	
 	// Get user details
-	const { name, email, password, cPassword } = req.body;
+	const { name, email, password } = req.body;
 
 	// Try create a new user
 	try {
