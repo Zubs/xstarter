@@ -21,6 +21,15 @@ function askQuestions() {
         const greeting = chalk_1.blue.bold('XStarter');
         const message = boxen_1.default(greeting, env_1.boxenConfig);
         console.log(message);
+        // Set project name and template
+        const projectName = [
+            {
+                name: 'project-name',
+                type: 'input',
+                message: `Project name: (${process.cwd()})`
+            },
+            {}
+        ];
     });
 }
 exports.askQuestions = askQuestions;

@@ -2,8 +2,14 @@ import { Options } from 'boxen'
 
 export const boxenConfig: Options = {
     padding: 3,
-    margin: 1,
+    margin: {
+        top: 1,
+        left: 5,
+        right: 5,
+        bottom: 1
+    },
     borderStyle: "double",
     borderColor: "green",
-    backgroundColor: "#123456"
+    backgroundColor: "green",
+    float: 'center'
 }

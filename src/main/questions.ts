@@ -8,4 +8,14 @@ export async function askQuestions () {
     const message = boxen(greeting, boxenConfig)
 
     console.log(message)
+
+    // Set project name and template
+    const projectName = [
+        {
+            name: 'project-name',
+            type: 'input',
+            message: `Project name: (${ process.cwd() })`
+        },
+        {}
+    ]
 }
