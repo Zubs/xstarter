@@ -1,0 +1,38 @@
+{
+  "name": "xstarter",
+  "version": "2.0.0",
+  "description": "NodeJs code starter",
+  "main": "dist/main/index.js",
+  "bin": {
+    "xstarter": "dist/bin/xstarter"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zubs/xstarter.git"
+  },
+  "keywords": [
+    "web",
+    "starter",
+    "node-starter",
+    "starterkit",
+    "backend",
+    "MVC"
+  ],
+  "author": "Zubs <zubairidrisaweda@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zubs/xstarter/issues"
+  },
+  "homepage": "https://github.com/Zubs/xstarter#readme",
+  "dependencies": {
+    "boxen": "^5.0.1",
+    "chalk": "^4.1.2",
+    "esm": "^3.2.25"
+  }
+}
